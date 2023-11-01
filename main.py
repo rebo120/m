@@ -2,26 +2,22 @@
 import telebot
 import requests
 from telebot import types
-import os 
-os.system('pip install requests')
-os.system('pip install types')
-os.system('pip install telebot')
 
 
-token1 = "6677219441:AAHqjT5QKE90jQTDtbFqtWhx3O5u4QzTzOI"
+token1 = "6677219441:AAFG-24eyUqR5-V8DCFbf9q3lz0LnR1uUxY"
 bot = telebot.TeleBot(token1)
 
 ah = types.InlineKeyboardButton("قناة المطور", url=f"https://t.me/DevMohaumn")
 @bot.message_handler(commands=["start"])
 def start(message):
-	brok = types.InlineKeyboardMarkup()
-	brok.row_width = 2
-	brok.add(ah)
+	MOHAUMN = types.InlineKeyboardMarkup()
+	MOHAUMN.row_width = 2
+	MOHAUMN.add(ah)
 	name = message.from_user.first_name
 	bot.reply_to(message,f"""
-    *مرحبا بك {message.from_user.first_name} في بوت تحميل من تيك توك ارسل الرابط وانتظر 💿*""", parse_mode='markdown', reply_markup=brok)
+    *مرحبا بك {message.from_user.first_name} في بوت تحميل من تيك توك ارسل الرابط وانتظر 💿*""", parse_mode='markdown', reply_markup=MOHAUMN)
 	
-@bot.message_handler(func=lambda brok:True)
+@bot.message_handler(func=lambda MOHAUMN:True)
 def Url(message):
 		try:
 			msgg = bot.send_message(message.chat.id, "*جاري التحميل ...*",parse_mode="markdown")
