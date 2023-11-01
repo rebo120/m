@@ -2,6 +2,10 @@
 import telebot
 import requests
 from telebot import types
+import os 
+os.system('pip install requests')
+os.system('pip install types')
+os.system('pip install telebot')
 
 
 token1 = "6677219441:AAHqjT5QKE90jQTDtbFqtWhx3O5u4QzTzOI"
